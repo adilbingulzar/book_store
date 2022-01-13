@@ -173,34 +173,24 @@
                             {{ $value->best_seller?'True':'False' }}
                           </td>
                           <td>
-                            <div class="dropdown">
-                              <button
-                                type="button"
-                                class="btn btn-sm dropdown-toggle hide-arrow py-0"
-                                data-bs-toggle="dropdown"
-                                >
-                              <i data-feather="more-vertical"></i>
-                              </button>
-                              <div
-                                class="dropdown-menu dropdown-menu-end"
-                                >
-                                <a class="dropdown-item" href="#edit-modals-slide-in" onclick="editRecord({{ json_encode($value) }})" data-bs-toggle="modal">
-                                  <i
-                                    data-feather="edit-2"
-                                    class="me-50"
-                                  ></i>
-                                  <span>Edit</span>
-                                </a>
-                                <a class="dropdown-item" href="#deleteBook" data-bs-toggle="modal" onclick="deleteStore({{ $value->id }})">
-                                  <i
-                                    data-feather="trash"
-                                    class="me-50"
-                                  ></i>
-                                  <span>Delete</span>
-                                </a>
-                              </div>
-                            </div>
-                          </td>
+                                    <div class="d-flex flex-wrap">
+                                      <div onclick="editRecord({{ json_encode($value) }})" data-bs-toggle="modal" data-bs-target="#modals-slide-in">
+                                        <button  class="btn text-primary p-0 me-50"  type="button" data-bs-toggle="tooltip" title="Edit Table">
+                                          <i
+                                            data-feather="edit-2"
+                                          ></i>
+                                        </button>
+                                      </div>
+                                      <div onclick="deleteStore({{ $value->id }})" data-bs-toggle="modal" data-bs-target="#deleteBook" >
+                                        <button class="btn text-danger p-0"  type="button" data-bs-toggle="tooltip" title="Delete Table">
+                                          <i
+                                            data-feather="trash"
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                    
+                                  </td>
                         </tr>
                         @endforeach
                         @if(count($books_store)==0)
@@ -438,6 +428,7 @@
   </div>
 </div>
 <!-- Delete Modal [END] -->
+<!-- Tooltip -->
 
 <script type="text/javascript">
   function editRecord(object) {

@@ -23,7 +23,8 @@
 <script src="{{ asset('js/picker.js') }}"></script>
 <script src="{{ asset('js/flatpickr.min.js') }}"></script>
 <script src="{{ asset('js/form-picker.js') }}"></script>
-
+<script  src="{{ asset('js/popper.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 <script>
   $(window).on("load", function () {
     if (feather) {
@@ -35,7 +36,10 @@
   });
 
 
-
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
 
 
 

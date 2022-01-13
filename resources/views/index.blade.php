@@ -174,7 +174,7 @@
                           </td>
                           <td>
                                     <div class="d-flex flex-wrap">
-                                      <div onclick="editRecord({{ json_encode($value) }})" data-bs-toggle="modal" data-bs-target="#modals-slide-in">
+                                      <div onclick="editRecord({{ json_encode($value) }})" data-bs-toggle="modal" data-bs-target="#edit-modals-slide-in">
                                         <button  class="btn text-primary p-0 me-50"  type="button" data-bs-toggle="tooltip" title="Edit Table">
                                           <i
                                             data-feather="edit-2"
